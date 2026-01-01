@@ -13,11 +13,11 @@
 // limitations under the License.
 
 #[cfg(feature = "memmap2")]
-use pcd_rs::header::{DataFormat, PcdHeader};
+use rs_pcd::header::{DataFormat, PcdHeader};
 #[cfg(feature = "memmap2")]
-use pcd_rs::io::PcdReader;
+use rs_pcd::io::PcdReader;
 #[cfg(feature = "memmap2")]
-use pcd_rs::io::read_pcd_file;
+use rs_pcd::io::read_pcd_file;
 use std::io::Write;
 use tempfile::NamedTempFile;
 

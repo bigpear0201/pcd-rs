@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use pcd_rs::header::{DataFormat, PcdHeader};
-use pcd_rs::io::read_pcd_file;
-// use pcd_rs::storage::PointBlock;
+use rs_pcd::header::{DataFormat, PcdHeader};
+use rs_pcd::io::read_pcd_file;
+// use rs_pcd::storage::PointBlock;
 use std::io::Write;
 use tempfile::NamedTempFile;
 

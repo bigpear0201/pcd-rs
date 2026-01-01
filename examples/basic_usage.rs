@@ -24,13 +24,13 @@
 //! `cargo run --example basic_usage --features "rayon memmap2"`
 
 use anyhow::Result;
-use pcd_rs::header::ValueType;
-use pcd_rs::header::{DataFormat, PcdHeader};
-#[cfg(feature = "memmap2")]
-use pcd_rs::io::PcdReader;
-use pcd_rs::io::{PcdWriter, read_pcd_file};
-use pcd_rs::storage::PointBlock;
 use rand::Rng;
+use rs_pcd::header::ValueType;
+use rs_pcd::header::{DataFormat, PcdHeader};
+#[cfg(feature = "memmap2")]
+use rs_pcd::io::PcdReader;
+use rs_pcd::io::{PcdWriter, read_pcd_file};
+use rs_pcd::storage::PointBlock;
 use std::fs::File;
 use std::io::BufWriter;
 use std::path::Path;
@@ -99,7 +99,7 @@ fn run_performance_test(points: usize, format: DataFormat) -> Result<()> {
     ];
 
     // 2. Prepare Header
-    let header = pcd_rs::header::PcdHeader {
+    let header = rs_pcd::header::PcdHeader {
         version: "0.7".to_string(),
         width: points as u32,
         points,
@@ -214,10 +214,10 @@ fn create_synthetic_pcd<P: AsRef<Path>>(path: P) -> Result<()> {
 
     // Schema
     let schema = vec![
-        ("x".to_string(), pcd_rs::header::ValueType::F32),
-        ("y".to_string(), pcd_rs::header::ValueType::F32),
-        ("z".to_string(), pcd_rs::header::ValueType::F32),
-        ("intensity".to_string(), pcd_rs::header::ValueType::F32),
+        ("x".to_string(), rs_pcd::header::ValueType::F32),
+        ("y".to_string(), rs_pcd::header::ValueType::F32),
+        ("z".to_string(), rs_pcd::header::ValueType::F32),
+        ("intensity".to_string(), rs_pcd::header::ValueType::F32),
     ];
 
     let mut block = PointBlock::new(&schema, points);

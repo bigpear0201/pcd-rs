@@ -38,7 +38,7 @@ pcd-rs = { version = "0.1", features = ["rayon", "memmap2"] }
 ### 读取 PCD 文件
 
 ```rust
-use pcd_rs::io::read_pcd_file;
+use rs_pcd::io::read_pcd_file;
 
 fn main() -> anyhow::Result<()> {
     // 读取文件到内存 (SoA Block)
@@ -61,9 +61,9 @@ fn main() -> anyhow::Result<()> {
 ### 写入 PCD 文件
 
 ```rust
-use pcd_rs::header::{PcdHeader, DataFormat, ValueType};
-use pcd_rs::io::PcdWriter;
-use pcd_rs::storage::PointBlock;
+use rs_pcd::header::{PcdHeader, DataFormat, ValueType};
+use rs_pcd::io::PcdWriter;
+use rs_pcd::storage::PointBlock;
 use std::fs::File;
 
 fn main() -> anyhow::Result<()> {
@@ -103,7 +103,7 @@ fn main() -> anyhow::Result<()> {
 当处理超大文件时，建议使用 `from_path_mmap`：
 
 ```rust
-use pcd_rs::io::PcdReader;
+use rs_pcd::io::PcdReader;
 
 fn main() -> anyhow::Result<()> {
     // 使用内存映射打开文件

@@ -1,7 +1,10 @@
 [package]
-name = "pcd-rs"
+name = "rs-pcd"
 version = "0.1.0"
 edition = "2024"
+description = ""
+license = "Apache-2.0"
+repository = "https://github.com/your/repo"
 
 [dependencies]
 byteorder = "1.5.0"

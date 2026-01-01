@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-use pcd_rs::header::{DataFormat, PcdHeader, ValueType};
-use pcd_rs::io::{PcdReader, PcdWriter};
-use pcd_rs::storage::PointBlock;
+use rs_pcd::header::{DataFormat, PcdHeader, ValueType};
+use rs_pcd::io::{PcdReader, PcdWriter};
+use rs_pcd::storage::PointBlock;
 use std::io::Cursor;
 
 #[test]

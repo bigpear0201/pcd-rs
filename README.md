@@ -41,7 +41,7 @@ pcd-rs = { version = "0.1", features = ["rayon", "memmap2"] }
 ### Reading a PCD File
 
 ```rust
-use pcd_rs::io::read_pcd_file;
+use rs_pcd::io::read_pcd_file;
 
 fn main() -> anyhow::Result<()> {
     // Read the entire file into memory (SoA block)
@@ -64,9 +64,9 @@ fn main() -> anyhow::Result<()> {
 ### Writing a PCD File
 
 ```rust
-use pcd_rs::header::{PcdHeader, DataFormat, ValueType};
-use pcd_rs::io::PcdWriter;
-use pcd_rs::storage::PointBlock;
+use rs_pcd::header::{PcdHeader, DataFormat, ValueType};
+use rs_pcd::io::PcdWriter;
+use rs_pcd::storage::PointBlock;
 use std::fs::File;
 
 fn main() -> anyhow::Result<()> {
@@ -106,7 +106,7 @@ fn main() -> anyhow::Result<()> {
 For handling files larger than available RAM or maximizing IO throughput:
 
 ```rust
-use pcd_rs::io::PcdReader;
+use rs_pcd::io::PcdReader;
 
 fn main() -> anyhow::Result<()> {
     let reader = PcdReader::from_path_mmap("huge_cloud.pcd")?;
